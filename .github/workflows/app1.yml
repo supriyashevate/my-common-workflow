@@ -17,7 +17,7 @@ jobs:
         run: echo Hello, from app1!
 
   docker:
-    uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
+    uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@$github.run_id
     with:
       image_name: my-awesome-app
       tag: latest
