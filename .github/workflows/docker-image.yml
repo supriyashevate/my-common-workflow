@@ -16,11 +16,10 @@ jobs:
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-        tag: supriyashevate/my-awesome-app:$(date +%s)
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $tag
+      run: docker build . --file Dockerfile --tag supriyashevate/my-awesome-app:$(date +%s)
       
     - name: Docker Push
-      run: docker push supriyashevate/my-awesome-app:$tag
+      run: docker push supriyashevate/my-awesome-app:$(date +%s)
