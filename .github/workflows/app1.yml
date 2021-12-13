@@ -20,12 +20,9 @@ jobs:
           echo $tag
       - name: Set the tag
         run: |
-          if [ -z "${{tag}}" ]
-          then
             echo "final_tag=latest" >> $GITHUB_ENV
-          else
-            echo "final_tag=${{tag}}" >> $GITHUB_ENV
-          fi
+            echo "final_tag=${{GITHUB_RUN_ID}}" >> $GITHUB_ENV
+          
 
   docker:
     uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
