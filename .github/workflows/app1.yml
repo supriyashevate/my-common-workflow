@@ -22,7 +22,7 @@ jobs:
     uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
     with:
       image_name: my-awesome-app
-      tag: new
+      tag: "${GITHUB_RUN_ID}"
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
