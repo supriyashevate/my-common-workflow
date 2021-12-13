@@ -22,5 +22,5 @@ jobs:
       image_name: my-awesome-app
       tag: $GITHUB_RUN_NUMBER
     secrets:
-      DOCKER_USER: ${{secrets.docker_username}}
-      DOCKER_PASSWORD: ${{secrets.docker_password}}
+      docker_username: ${{secrets.DOCKER_USER}}
+      docker_password: ${{secrets.DOCKER_PASSWORD}}
