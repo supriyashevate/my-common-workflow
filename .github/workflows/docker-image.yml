@@ -24,12 +24,12 @@ jobs:
         
     - name: Extract metadata (tags, labels) for Docker
       id: meta
-      uses: docker/metadata-action@1b8f167ee0ea0ef88eed5b2c1439d57014b52b46f4d9d8e3486593cb405609e0
+      uses: docker/metadata-action@34497c27eb1a58b17ac1cdbeb208163df209bfb3
       with:
         images: supriyashevate/my-awesome-app
       
     - name: Build and push Docker image
-      uses: docker/build-push-action@1b8f167ee0ea0ef88eed5b2c1439d57014b52b46f4d9d8e3486593cb405609e0
+      uses: docker/build-push-action@34497c27eb1a58b17ac1cdbeb208163df209bfb3
       with:
         context: .
         push: true
