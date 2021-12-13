@@ -31,9 +31,10 @@ jobs:
       run: |
         if [ -z "${{inputs.tag}}" ]
         then
-          echo "final_tag=${{GITHUB_RUN_ID}}" >> $GITHUB_ENV
-        else
           echo "final_tag=latest" >> $GITHUB_ENV
+          echo "${{GITHUB_RUN_ID}}"
+        else
+          echo "final_tag=${{GITHUB_RUN_ID}}" >> $GITHUB_ENV
         fi
           
     - name: Build and push Docker image
