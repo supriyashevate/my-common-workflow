@@ -28,6 +28,6 @@ jobs:
         registry: docker.pkg.github.com
         username: $GITHUB_ACTOR
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: supriyashevate/my-awesome-app
+        repository: supriyashevate/my-awesome-app:v123
         tag_with_ref: true
         tag_with_sha: true
