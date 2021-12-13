@@ -16,14 +16,12 @@ jobs:
       - name: Run a one-line script
         run: |
           echo Hello, from app1!
-          echo "tag=${{GITHUB_RUN_ID}}"
-          echo $tag
           
   docker:
     uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
     with:
       image_name: my-awesome-app
-      tag: 
+      tag: ""
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
