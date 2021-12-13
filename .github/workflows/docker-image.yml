@@ -7,11 +7,6 @@ on:
         type: string
       tag: 
         type: string
-    secrets:
-      DOCKER_USER:
-        required: true
-      DOCKER_PASSWORD:
-        required: true
 jobs:
   build:
 
