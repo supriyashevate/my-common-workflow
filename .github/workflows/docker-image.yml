@@ -15,14 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        
+    - name: Publish image
+      uses: docker/build-push-action@v1
       with:
-        username: ${{ secrets.DOCKER_USER }}
+        registry: docker.pkg.github.com
+        username: $GITHUB_ACTOR
         password: ${{ secrets.DOCKER_PASSWORD }}
-          
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag supriyashevate/my-awesome-app:latest
-      
-    - name: Docker Push
-      run: docker push supriyashevate/my-awesome-app
+        repository: supriyashevate/my-awesome-app
+        tag_with_ref: true
+        tag_with_sha: true
