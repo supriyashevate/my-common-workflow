@@ -21,7 +21,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag supriyashevate/my-awesome-app:${{env.tag_name}}
+      run: docker build . --file Dockerfile --tag supriyashevate/my-awesome-app:latest
       
     - name: Docker Push
       run: docker push supriyashevate/my-awesome-app
