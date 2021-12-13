@@ -11,10 +11,8 @@ on:
 jobs:
   do-it:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - name: Run a one-line script
         run: echo Hello, from app1 !
 
@@ -24,5 +22,5 @@ jobs:
       image_name: my-awesome-app
       tag: $GITHUB_RUN_NUMBER
     secrets:
-      DOCKER_USER: ${{secrets.DOCKER_USER}}
-      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      DOCKER_USER: ${{secrets.docker_username}}
+      DOCKER_PASSWORD: ${{secrets.docker_password}}
