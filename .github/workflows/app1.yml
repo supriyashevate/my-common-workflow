@@ -19,7 +19,7 @@ jobs:
           echo "$GITHUB_RUN_ID"
 
   docker:
-    uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@latest
+    uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
     with:
       image_name: my-awesome-app
       tag: latest
