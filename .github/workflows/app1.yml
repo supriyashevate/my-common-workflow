@@ -21,4 +21,7 @@ jobs:
     with:
       image_name: my-awesome-app
       tag: new
+    secrets:
+      username: ${{ secrets.DOCKER_USER }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
 
