@@ -10,7 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      tag: $(date +%s)
+      tag_name: $(date +%s)
       
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag supriyashevate/my-awesome-app:latest
+      run: docker build . --file Dockerfile --tag supriyashevate/my-awesome-app:${{env.tag_name}}
       
     - name: Docker Push
       run: docker push supriyashevate/my-awesome-app
