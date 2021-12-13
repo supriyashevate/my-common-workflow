@@ -26,10 +26,19 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
+        
+    - name: Set the tag
+      run: |
+        if [ -z "${{inputs.tag}}" ]
+        then
+          echo "final_tag=latest" >> $GITHUB_ENV
+        else
+          echo "final_tag=${{inputs.tag}}" >> $GITHUB_ENV
+        fi
+          
     - name: Build and push Docker image
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
       with:
         push: true
-        tags: ${{secrets.DOCKER_USER}}/${{inputs.image_name}}:${{inputs.tag}}
+        tags: ${{secrets.DOCKER_USER}}/${{inputs.image_name}}:${{env.final_tag}}
 
