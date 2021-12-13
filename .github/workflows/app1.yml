@@ -19,9 +19,7 @@ jobs:
           echo "tag=${{GITHUB_RUN_ID}}"
           echo $tag
       - name: Set the tag
-        run: |
-            echo "final_tag=latest" >> $GITHUB_ENV
-            echo "final_tag=${{GITHUB_RUN_ID}}" >> $GITHUB_ENV
+        run: echo "final_tag=${{GITHUB_RUN_ID}}" >> $GITHUB_ENV
           
 
   docker:
