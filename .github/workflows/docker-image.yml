@@ -8,9 +8,9 @@ on:
       tag: 
         type: string
     secrets:
-      docker_username:
+      DOCKER_USER:
         required: true
-      docker_password:
+      DOCKER_PASSWORD:
         required: true
 jobs:
   build:
