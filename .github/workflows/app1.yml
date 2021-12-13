@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo Hello, from app1!
+        run: |
+          echo Hello, from app1!
+          echo "$GITHUB_RUN_ID"
 
   docker:
     uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@latest
