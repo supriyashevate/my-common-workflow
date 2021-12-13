@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: |
-          echo Hello, from app1!
+          echo Hello, from app1!!
           
   docker:
     uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
