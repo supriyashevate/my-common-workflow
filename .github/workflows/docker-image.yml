@@ -33,7 +33,7 @@ jobs:
         then
           echo "final_tag=latest" >> $GITHUB_ENV
         else
-          echo "final_tag=${{inputs.tag}}-$GITHUB_RUN_ID" >> $GITHUB_ENV
+          echo "final_tag=${{inputs.tag}}-${{GITHUB_RUN_ID}}" >> $GITHUB_ENV
           echo "$GITHUB_RUN_ID"
         fi
           
