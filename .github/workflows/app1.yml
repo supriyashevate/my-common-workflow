@@ -23,6 +23,6 @@ jobs:
       image_name: my-awesome-app
       tag: ""
     secrets:
-      DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      docker_username: ${{ secrets.DOCKER_USER }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
 
