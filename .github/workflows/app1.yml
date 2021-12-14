@@ -21,7 +21,7 @@ jobs:
     uses: supriyashevate/my-common-workflow/.github/workflows/docker-image.yml@master
     with:
       image_name: my-awesome-app
-      tag: app1
+      tag: frontend-service
     secrets:
       docker_username: ${{ secrets.DOCKER_USER }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
